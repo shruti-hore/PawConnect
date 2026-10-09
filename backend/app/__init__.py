@@ -33,7 +33,16 @@ def create_app(config_class=Config):
     migrate.init_app(app, db, directory=str(BACKEND_DIR / "migrations"))
 
     # Register models with SQLAlchemy metadata
-    from .models import Role, User
+    from .models import (
+        Role,
+        User,
+        NGO,
+        Animal,
+        RescueCase,
+        AdoptionApplication,
+        Donation,
+        VolunteerApplication,
+    )
 
     @app.get("/api/health")
     def health_check():

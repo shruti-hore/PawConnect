@@ -1,82 +1,63 @@
-# Implementation Status
+# Current Implementation Status
 
-## Phase 0 — Planning & Architecture
+Completed:
 
-- [x] Project documentation
-- [x] Requirements
-- [x] Architecture
-- [x] Database design
-- [x] API design
+✓ Project structure
+✓ Documentation structure
+✓ Flask backend foundation
+✓ Environment configuration
+✓ PostgreSQL connection
+✓ SQLAlchemy setup
+✓ Flask-Migrate/Alembic setup
+✓ Role model (with centralized RoleName constants)
+✓ User model
+✓ Role → User relationship
+✓ Initial database migration (fbbf2f4394f4)
+✓ Local database migration applied
+✓ Database schema verification
+✓ Backend health endpoint
+✓ Amazon Cognito JWT authentication (@cognito_required)
+✓ RS256 signature verification
+✓ Issuer / expiration / token_use / client identity / sub validation
+✓ RBAC/authorization foundation (@roles_required)
+✓ 14 authentication tests pass
+✓ 16 RBAC tests pass
+✓ NGO model (owner relationship, verification status, unique user constraint)
+✓ Animal model (NGO association, status tracking, image reference)
+✓ RescueCase model (reporter and assigned NGO relations, status lifecycle, location)
+✓ Migration 2c795a1a1e0b (ngos, animals, rescue_cases tables, constraints, indexes)
+✓ Local database migration applied (2c795a1a1e0b)
+✓ 21 Batch 1 core domain model tests pass
+✓ AdoptionApplication model (animal, user, and NGO associations, lifecycle status)
+✓ Donation model (donor user and optional rescue case association, Decimal amounts, audit integrity)
+✓ VolunteerApplication model (volunteer user and NGO associations, status tracking)
+✓ Migration 03cdf4bc96d9 (adoption_applications, donations, volunteer_applications tables, constraints, indexes)
+✓ Local database migration applied (03cdf4bc96d9)
+✓ 21 Batch 2 model tests pass (72 total tests pass)
 
-## Phase 1 — Project Setup
+Current database:
 
-- [ ] Frontend setup
-- [ ] Backend setup
-- [ ] Database setup
-- [ ] Environment configuration
+PostgreSQL
+├── alembic_version  (version_num: 03cdf4bc96d9)
+├── roles
+├── users
+├── ngos
+├── animals
+├── rescue_cases
+├── volunteer_applications
+├── adoption_applications
+└── donations
 
-## Phase 2 — Authentication
+Active migration head: 03cdf4bc96d9
 
-- [ ] Cognito configuration
-- [ ] Registration
-- [ ] Login
-- [ ] Authentication
-- [ ] RBAC
-- [ ] Google SSO
+Next:
 
-## Phase 3 — Animal / Rescue
-
-- [ ] Animal creation
-- [ ] Animal listing
-- [ ] Animal details
-- [ ] Rescue reporting
-- [ ] Rescue case management
-- [ ] Image upload
-
-## Phase 4 — Adoption
-
-- [ ] Adoption application
-- [ ] Application management
-- [ ] Approval/rejection
-
-## Phase 5 — Volunteers
-
-- [ ] Volunteer registration
-- [ ] Volunteer applications
-- [ ] Task management
-
-## Phase 6 — Donations
-
-- [ ] Donation workflow
-- [ ] Donation records
-
-## Phase 7 — Admin
-
-- [ ] User management
-- [ ] NGO verification
-- [ ] Report moderation
-
-## Phase 8 — Cloud
-
-- [ ] RDS
-- [ ] S3
-- [ ] Cognito
-- [ ] Elastic Beanstalk
-- [ ] CloudWatch
-- [ ] HTTPS
-- [ ] Load balancing
-
-## Phase 9 — CI/CD
-
-- [ ] GitHub Actions
-- [ ] Automated testing
-- [ ] AWS deployment
-
-## Phase 10 — Testing
-
-- [ ] API testing
-- [ ] Authentication testing
-- [ ] RBAC testing
-- [ ] Workflow testing
-- [ ] Cloud testing
-- [ ] Performance testing
+→ REST APIs (Authentication, User profile, NGO, Animal listing, Rescue case, Adoption, Donation, Volunteer)
+→ Frontend
+→ S3
+→ AWS deployment
+→ ALB/scaling
+→ CloudWatch
+→ CI/CD
+→ Performance testing
+→ Final report/demo

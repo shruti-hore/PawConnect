@@ -21,3 +21,9 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # Amazon Cognito Configuration
+    COGNITO_REGION = os.getenv("COGNITO_REGION") or os.getenv("AWS_REGION")
+    COGNITO_USER_POOL_ID = os.getenv("COGNITO_USER_POOL_ID")
+    COGNITO_APP_CLIENT_ID = os.getenv("COGNITO_APP_CLIENT_ID")
+    COGNITO_JWKS_URL = os.getenv("COGNITO_JWKS_URL")  # Optional override for testing

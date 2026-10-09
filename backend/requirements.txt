@@ -3,3 +3,4 @@ python-dotenv
 Flask-SQLAlchemy
 Flask-Migrate
 psycopg2-binary
+PyJWT[crypto]
