@@ -33,8 +33,8 @@ The primary cloud provider is AWS.
 
 | AWS Service | Purpose |
 |---|---|
-| Elastic Beanstalk | Application deployment |
-| EC2 | Underlying compute |
+| EC2 | Host for the Docker Compose frontend and API containers |
+| Elastic Beanstalk | Optional managed application deployment environment |
 | RDS | PostgreSQL database |
 | S3 | Image/object storage |
 | Cognito | Authentication |
@@ -47,7 +47,9 @@ The primary cloud provider is AWS.
 
 ### PaaS
 
-Elastic Beanstalk provides a managed application deployment environment.
+Elastic Beanstalk is an optional managed deployment target. The direct EC2
+deployment described in [EC2-DOCKER.md](EC2-DOCKER.md) runs the containers on
+EC2 instead.
 
 ### IaaS
 

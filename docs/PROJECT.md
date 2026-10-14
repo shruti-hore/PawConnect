@@ -220,7 +220,7 @@ The project is not intended to be a true scientific High Performance Computing s
 | Cloud Database | Amazon RDS |
 | Image Storage | Amazon S3 |
 | Authentication | Amazon Cognito |
-| Deployment | AWS Elastic Beanstalk |
+| Deployment | AWS EC2 with Docker Compose |
 | Load Balancing | AWS Application Load Balancer |
 | Monitoring | Amazon CloudWatch |
 | Version Control | Git + GitHub |
